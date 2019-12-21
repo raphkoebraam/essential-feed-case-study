@@ -77,8 +77,7 @@
 			children = (
 				C9ECACBE23AE670B00BD3E83 /* EssentialFeed.h */,
 				C9ECACBF23AE670B00BD3E83 /* Info.plist */,
-				C9ECACD523AE687400BD3E83 /* FeedItem.swift */,
-				C9ECACD723AE690700BD3E83 /* FeedLoader.swift */,
+				C9ECACD923AE69D300BD3E83 /* FeedFeature */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -90,6 +89,15 @@
 				C9ECACCB23AE670C00BD3E83 /* Info.plist */,
 			);
 			path = EssentialFeedTests;
+			sourceTree = "<group>";
+		};
+		C9ECACD923AE69D300BD3E83 /* FeedFeature */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECACD523AE687400BD3E83 /* FeedItem.swift */,
+				C9ECACD723AE690700BD3E83 /* FeedLoader.swift */,
+			);
+			path = FeedFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
