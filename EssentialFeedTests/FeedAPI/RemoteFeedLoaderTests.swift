@@ -39,7 +39,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
         
-        expect(sut: sut, toCompleteWith: .failure(.connectivity), when: {
+        expect(sut: sut, toCompleteWith: .failure(RemoteFeedLoader.Error.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         })
@@ -51,7 +51,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
         
         samples.enumerated().forEach { offset, element in
-            expect(sut: sut, toCompleteWith: .failure(.invalidData), when: {
+            expect(sut: sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData), when: {
                 let jsonData = makeItemsJSONData(with: [])
                 client.complete(withStatusCode: element, data: jsonData, at: offset)
             })
@@ -61,7 +61,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
-        expect(sut: sut, toCompleteWith: .failure(.invalidData), when: {
+        expect(sut: sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData), when: {
             let invalidJSON = Data("invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
@@ -119,7 +119,7 @@ class RemoteFeedLoaderTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case let (.success(receveidItems), .success(expectedItems)):
                 XCTAssertEqual(receveidItems, expectedItems, file: file, line: line)
-            case let (.failure(receveidError), .failure(expectedError)):
+            case let (.failure(receveidError as RemoteFeedLoader.Error), .failure(expectedError as RemoteFeedLoader.Error)):
                 XCTAssertEqual(receveidError, expectedError, file: file, line: line)
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
