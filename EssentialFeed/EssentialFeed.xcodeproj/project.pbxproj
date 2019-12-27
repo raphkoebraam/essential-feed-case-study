@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C97C0F3123B6735900EDF0B6 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0F3023B6735900EDF0B6 /* CodableFeedStore.swift */; };
 		C993BCEF23B0E2CD0060DAB8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993BCEE23B0E2CD0060DAB8 /* HTTPClient.swift */; };
 		C993BCF123B0E30D0060DAB8 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993BCF023B0E30D0060DAB8 /* FeedItemsMapper.swift */; };
 		C993BCF423B106270060DAB8 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993BCF323B106270060DAB8 /* URLSessionHTTPClientTests.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C97C0F3023B6735900EDF0B6 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		C993BCEE23B0E2CD0060DAB8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		C993BCF023B0E30D0060DAB8 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		C993BCF323B106270060DAB8 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				C9F0911723B3B24A007648F4 /* FeedStore.swift */,
 				C9F0911B23B3BEC1007648F4 /* LocalFeedImage.swift */,
 				C9F0912823B50815007648F4 /* FeedCachePolicy.swift */,
+				C97C0F3023B6735900EDF0B6 /* CodableFeedStore.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				C9F0911C23B3BEC1007648F4 /* LocalFeedImage.swift in Sources */,
 				C9F0911823B3B24A007648F4 /* FeedStore.swift in Sources */,
 				C9F0911623B3B1EB007648F4 /* LocalFeedLoader.swift in Sources */,
+				C97C0F3123B6735900EDF0B6 /* CodableFeedStore.swift in Sources */,
 				C993BCEF23B0E2CD0060DAB8 /* HTTPClient.swift in Sources */,
 				C9ECACD623AE687400BD3E83 /* FeedImage.swift in Sources */,
 				C9FDF17823B14EB800FEE34B /* URLSessionHTTPClient.swift in Sources */,
