@@ -9,7 +9,7 @@
 import XCTest
 import EssentialFeed
 
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStoreTestSpecs {
     
     override func setUp() {
         super.setUp()
