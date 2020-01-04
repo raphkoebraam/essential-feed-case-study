@@ -3,8 +3,8 @@ pipeline {
   stages {
       stage('Prepare Environment') {
         steps {
-          // Sources custom bash profile
-          sh 'source ~/.custom_bash_profile'
+          // Sources zshrc
+          sh 'source ~/.zshrc'
 
           // Sets ruby version
           sh 'rbenv local `cat .ruby-version`'
