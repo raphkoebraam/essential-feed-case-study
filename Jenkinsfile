@@ -6,6 +6,8 @@ pipeline {
           sh 'ruby -v'
           sh 'which ruby'
           sh 'echo $PATH'
+          sh 'export PATH=$PATH:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims'
+          sh 'echo $PATH'
           
           // Sources zshrc
           // sh 'source ~/.zshrc'
