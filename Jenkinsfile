@@ -2,11 +2,12 @@ pipeline {
   agent any
   stages {
       stage('Prepare Environment') {
-        steps {          
+        steps {
+          sh 'ruby -v'
+          sh 'which ruby'
+          
           // Sources zshrc
           // sh 'source ~/.zshrc'
-
-          sh 'rbenv'
           
           // Sets ruby version
           sh 'rbenv local `cat .ruby-version`'
