@@ -5,18 +5,19 @@ pipeline {
         steps {
           sh 'ruby -v'
           sh 'which ruby'
+          sh 'echo $PATH'
           
           // Sources zshrc
           // sh 'source ~/.zshrc'
           
           // Sets ruby version
-          sh 'rbenv local `cat .ruby-version`'
+          //sh 'rbenv local `cat .ruby-version`'
 
           // Installs bundler
-          sh 'gem install bundler'
+          //sh 'gem install bundler'
 
           // Install gems
-          sh 'bundle install'
+          //sh 'bundle install'
       }
     }
 
