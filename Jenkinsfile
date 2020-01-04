@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Slather Report') {
+      steps {
+        sh 'bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj'
+      }
+    }
+
   }
 }
