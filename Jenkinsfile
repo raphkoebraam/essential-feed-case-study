@@ -6,6 +6,8 @@ pipeline {
           // Sources zshrc
           // sh 'source ~/.zshrc'
 
+          sh 'rbenv'
+          
           // Sets ruby version
           sh 'rbenv local `cat .ruby-version`'
 
