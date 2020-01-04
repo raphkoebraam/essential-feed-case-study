@@ -30,7 +30,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'test-reports/slater/',
+                        reportDir: 'test-reports/slather',
                         reportFiles: 'index.html',
                         reportName: 'Code Coverage Report'
                     ]
