@@ -5,22 +5,17 @@ pipeline {
         steps {
           // Makes Jenkins aware of rbenv
           sh '''
-          echo $HOME
           RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
-          echo $RBENV_HOME
           [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
-          echo $PATH
+
           eval "$(rbenv init -)"
-          '''
           
-          // Sets ruby version
-          sh 'rbenv local `cat .ruby-version`'
-
-          // Installs bundler
-          sh 'gem install bundler'
-
-          // Install gems
-          sh 'bundle install'
+          rbenv local `cat .ruby-version`
+          
+          gem install bundler
+          
+          bundle install
+          '''
       }
     }
 
