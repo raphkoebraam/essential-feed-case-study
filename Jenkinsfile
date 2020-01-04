@@ -9,14 +9,12 @@ pipeline {
 
         stage('Slather Report') {
             steps {
-                sh './scripts/setup_environment.sh'
+                sh '''
+                    ./scripts/setup_environment.sh
 
-                sh 'rbenv local'
-                sh 'ruby -v'
-                sh 'which ruby'
-
-                // Generates report
-                sh 'bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj'
+                    # Generates the report
+                    bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj
+                '''
 
                 // Publishes html
                 publishHTML target: [
