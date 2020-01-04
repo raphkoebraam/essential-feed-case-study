@@ -11,6 +11,10 @@ pipeline {
             steps {
                 sh './scripts/setup_environment.sh'
 
+                sh 'rbenv local'
+                sh 'ruby -v'
+                sh 'which ruby'
+
                 // Generates report
                 sh 'bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj'
 
