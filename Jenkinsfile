@@ -5,11 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Clean') {
-            steps {
-                cleanWs()
-            }
-        }
 
         stage('Build & Test') {
             steps {
@@ -44,6 +39,13 @@ pipeline {
                         reportFiles: 'index.html',
                         reportName: 'Code Coverage Report'
                     ]
+            }
+        }
+    }
+
+    post {
+        cleanup {
+            cleanWs()
             }
         }
     }
