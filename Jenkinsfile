@@ -6,6 +6,8 @@ pipeline {
           sh '''
           #!/bin/bash
           
+          source ~/.custom_bash_profile
+          
           rbenv local `cat .ruby-version`
           '''
           // sh 'ruby -v'
