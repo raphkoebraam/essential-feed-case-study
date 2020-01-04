@@ -9,7 +9,7 @@ pipeline {
           RBENV_HOME='/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims'
           echo $RBENV_HOME
           export PATH=$PATH:$RBENV_HOME
-          [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${PATH}:${RBENV_HOME}"
+          [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
           echo $PATH
           '''
           
