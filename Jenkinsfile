@@ -5,12 +5,10 @@ pipeline {
         steps {
           // Makes Jenkins aware of rbenv
           sh '''
-          source ~/.custom_bash_profile
           echo $HOME
           RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
           echo $RBENV_HOME
-          export PATH=$PATH:$RBENV_HOME
-          typeset -aU path
+          [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
           echo $PATH
           '''
           
