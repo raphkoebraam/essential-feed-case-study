@@ -7,10 +7,10 @@ pipeline {
           sh 'rbenv local `cat .ruby-version`'
 
           // Installs bundler
-          gem install bundler
+          sh 'gem install bundler'
 
           // Install gems
-          bundle install
+          sh 'bundle install'
       }
     }
 
