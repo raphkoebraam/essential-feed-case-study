@@ -10,11 +10,16 @@ pipeline {
         stage('Slather Report') {
             steps {
                 sh '''
-                    ./scripts/setup_environment.sh
-                    
-                    ruby -v
-                    which ruby
-                    rbenv local
+                    RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
+                    [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
+
+                    eval "$(rbenv init -)"
+
+                    rbenv local `cat .ruby-version`
+
+                    gem install bundler
+
+                    bundle install
 
                     # Generates the report
                     bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj
