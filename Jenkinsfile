@@ -1,29 +1,17 @@
 pipeline {
     agent any
     stages {
-        environment {
-            sh '''
-                RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
-                [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
-
-                eval "$(rbenv init -)"
-
-                rbenv local `cat .ruby-version`
-
-                gem install bundler
-
-                bundle install
-            '''
-        }
-
         stage('Build & Test') {
             steps {
+                sh './scripts/setup_environment.sh'
                 sh 'xcodebuild clean build test -project EssentialFeed/EssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO'
             }
         }
 
         stage('Slather Report') {
             steps {
+                sh './scripts/setup_environment.sh'
+
                 // Generates report
                 sh 'bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj'
 
