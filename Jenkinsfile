@@ -10,6 +10,7 @@ pipeline {
           echo $RBENV_HOME
           [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
           echo $PATH
+          eval "$(rbenv init -)"
           '''
           
           // Sets ruby version
