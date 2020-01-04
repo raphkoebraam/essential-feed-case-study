@@ -22,10 +22,10 @@ pipeline {
 
     stage('Slather Report') {
       steps {
-        // generate report
+        // Generates report
         sh 'bundle exec slather coverage --html --scheme CI EssentialFeed/EssentialFeed.xcodeproj'
 
-        // publish html
+        // Publishes html
         publishHTML target: [
             allowMissing: false,
             alwaysLinkToLastBuild: false,
