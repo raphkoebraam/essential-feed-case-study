@@ -3,23 +3,23 @@ pipeline {
   stages {
       stage('Prepare Environment') {
         steps {
-          sh 'ruby -v'
-          sh 'which ruby'
-          sh 'echo $PATH'
-          sh 'export PATH=$PATH:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims'
-          sh 'echo $PATH'
-          
-          // Sources zshrc
-          // sh 'source ~/.zshrc'
+          // Makes Jenkins aware of rbenv
+          sh '''
+          RBENV_HOME='/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims'
+          echo $RBENV_HOME
+          export PATH=$PATH:$RBENV_HOME
+          [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${PATH}:${RBENV_HOME}"
+          echo $PATH
+          '''
           
           // Sets ruby version
-          //sh 'rbenv local `cat .ruby-version`'
+          sh 'rbenv local `cat .ruby-version`'
 
           // Installs bundler
-          //sh 'gem install bundler'
+          sh 'gem install bundler'
 
           // Install gems
-          //sh 'bundle install'
+          sh 'bundle install'
       }
     }
 
