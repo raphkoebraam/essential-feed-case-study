@@ -1,23 +1,18 @@
 pipeline {
   agent any
   stages {
-      stage('Prepare Environment') {
-        steps {
-          // Makes Jenkins aware of rbenv
-          sh '''
-          RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
-          [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
-
-          eval "$(rbenv init -)"
-          
-          rbenv local `cat .ruby-version`
-          
-          gem install bundler
-          
-          bundle install
-          '''
-      }
-    }
+    sh '''
+      RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
+      [[ ":$PATH:" != *":$RBENV_HOME:"* ]] && PATH="${RBENV_HOME}:${PATH}"
+      
+      eval "$(rbenv init -)"
+      
+      rbenv local `cat .ruby-version`
+      
+      gem install bundler
+      
+      bundle install
+    '''
 
     stage('Build & Test') {
       steps {
