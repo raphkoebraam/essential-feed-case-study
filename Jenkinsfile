@@ -3,7 +3,12 @@ pipeline {
   stages {
       stage('Prepare Environment') {
         steps {
-          sh 'ruby -v'
+          sh '''
+          #!/bin/bash
+          
+          rbenv local `cat .ruby-version`
+          '''
+          // sh 'ruby -v'
           
           // Sources zshrc
           // sh 'source ~/.zshrc'
