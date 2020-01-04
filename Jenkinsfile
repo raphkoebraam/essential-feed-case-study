@@ -3,17 +3,19 @@ pipeline {
   stages {
       stage('Prepare Environment') {
         steps {
+          sh 'ruby -v'
+          
           // Sources zshrc
-          sh 'source ~/.zshrc'
+          // sh 'source ~/.zshrc'
 
           // Sets ruby version
-          sh 'rbenv local `cat .ruby-version`'
+          // sh 'rbenv local `cat .ruby-version`'
 
           // Installs bundler
-          sh 'gem install bundler'
+          // sh 'gem install bundler'
 
           // Install gems
-          sh 'bundle install'
+          // sh 'bundle install'
       }
     }
 
