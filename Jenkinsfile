@@ -5,7 +5,7 @@ pipeline {
         steps {
           // Makes Jenkins aware of rbenv
           sh '''
-          source ~/.zshrc
+          source ~/.custom_bash_profile
           echo $HOME
           RBENV_HOME=/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims
           echo $RBENV_HOME
