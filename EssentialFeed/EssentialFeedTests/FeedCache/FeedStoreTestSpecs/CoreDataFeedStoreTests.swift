@@ -174,17 +174,17 @@ private final class FeedStoreStub: FeedStore {
     
     func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         if failure.contains(.delete) {
-            completion(Error.couldNotDelete)
+            completion(.failure(Error.couldNotDelete))
         } else {
-            completion(nil)
+            completion(.success(()))
         }
     }
     
     func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
         if failure.contains(.insert) {
-            completion(Error.couldNotInsert)
+            completion(.failure(Error.couldNotInsert))
         } else {
-            completion(nil)
+            completion(.success(()))
         }
     }
     
