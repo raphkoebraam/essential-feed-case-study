@@ -192,7 +192,7 @@ private final class FeedStoreStub: FeedStore {
         if failure.contains(.retrieve) {
             completion(.failure(Error.couldNotRetrieve))
         } else {
-            completion(.success(.empty))
+            completion(.success(.none))
         }
     }
 }
