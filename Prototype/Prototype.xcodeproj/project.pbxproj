@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C996243B24A3D2C5004854FD /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996243A24A3D2C5004854FD /* FeedTableViewController.swift */; };
+		C996243D24A3D50D004854FD /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996243C24A3D50D004854FD /* FeedImageViewModel+PrototypeData.swift */; };
 		C9CE17EE24A3CB8000584045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE17ED24A3CB8000584045 /* AppDelegate.swift */; };
 		C9CE17F024A3CB8000584045 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE17EF24A3CB8000584045 /* SceneDelegate.swift */; };
 		C9CE17F524A3CB8000584045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CE17F324A3CB8000584045 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		C996243A24A3D2C5004854FD /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		C996243C24A3D50D004854FD /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
 		C9CE17EA24A3CB8000584045 /* Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE17ED24A3CB8000584045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CE17EF24A3CB8000584045 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C9CE17F624A3CB8100584045 /* Assets.xcassets */,
 				C9CE17F824A3CB8100584045 /* LaunchScreen.storyboard */,
 				C9CE17FB24A3CB8100584045 /* Info.plist */,
+				C996243C24A3D50D004854FD /* FeedImageViewModel+PrototypeData.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				C9CE17EE24A3CB8000584045 /* AppDelegate.swift in Sources */,
 				C996243B24A3D2C5004854FD /* FeedTableViewController.swift in Sources */,
+				C996243D24A3D50D004854FD /* FeedImageViewModel+PrototypeData.swift in Sources */,
 				C9CE17F024A3CB8000584045 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

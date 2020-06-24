@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct FeedImageViewModel {
+    let description: String?
+    let location: String?
+    let imageName: String
+}
+
 final class FeedTableViewController: UITableViewController {
 
     // MARK: - Table view data source
