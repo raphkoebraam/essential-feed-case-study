@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 import EssentialFeed
 
-final class FeedViewController: UITableViewController {
+final class FeedTableViewController: UITableViewController {
     private var loader: FeedLoader?
     
     convenience init(loader: FeedLoader) {
@@ -99,9 +99,9 @@ class FeedTableViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedTableViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
-        let sut = FeedViewController(loader: loader)
+        let sut = FeedTableViewController(loader: loader)
         trackMemoryLeaks(loader, file: file, line: line)
         trackMemoryLeaks(sut, file: file, line: line)
         return (sut, loader)
@@ -124,7 +124,7 @@ class FeedTableViewControllerTests: XCTestCase {
     }
 }
 
-private extension FeedViewController {
+private extension FeedTableViewController {
     func simulateUserInitiatedFeedReload() {
         refreshControl?.simulatePullToRefresh()
     }
