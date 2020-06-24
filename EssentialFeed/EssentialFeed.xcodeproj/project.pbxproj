@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C930DD0624A3EAC400E2E922 /* FeedTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930DD0524A3EAC400E2E922 /* FeedTableViewControllerTests.swift */; };
+		C930DD0824A3EDD300E2E922 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECACBB23AE670B00BD3E83 /* EssentialFeed.framework */; };
+		C930DD0924A3EDD300E2E922 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECACBB23AE670B00BD3E83 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C97C0F3723B8F57E00EDF0B6 /* FeedStoreTestSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0F3623B8F57E00EDF0B6 /* FeedStoreTestSpecs.swift */; };
 		C97C0F3A23B8FA5700EDF0B6 /* XCTestCase+FeedStoreTestSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0F3923B8FA5700EDF0B6 /* XCTestCase+FeedStoreTestSpecs.swift */; };
 		C97C0F3C23B9010F00EDF0B6 /* XCTestCase+FailableRetrieveFeedStoreTestSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C0F3B23B9010F00EDF0B6 /* XCTestCase+FailableRetrieveFeedStoreTestSpecs.swift */; };
@@ -52,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C930DD0A24A3EDD300E2E922 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECACB223AE670B00BD3E83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9ECACBA23AE670B00BD3E83;
+			remoteInfo = EssentialFeed;
+		};
 		C9C8D0372427973200BF34E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECACB223AE670B00BD3E83 /* Project object */;
@@ -81,6 +90,20 @@
 			remoteInfo = EssentialFeediOS;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C930DD0C24A3EDD300E2E922 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C930DD0924A3EDD300E2E922 /* EssentialFeed.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C930DD0524A3EAC400E2E922 /* FeedTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -167,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C930DD0824A3EDD300E2E922 /* EssentialFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +205,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C930DD0724A3EDD300E2E922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C97C0F4123B9042900EDF0B6 /* FeedStoreTestSpecs */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +290,7 @@
 				C9F772E52479AA10006272D3 /* EssentialFeediOS */,
 				C9F772F02479AA11006272D3 /* EssentialFeediOSTests */,
 				C9ECACBC23AE670B00BD3E83 /* Products */,
+				C930DD0724A3EDD300E2E922 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -477,10 +509,12 @@
 				C9F772E02479AA10006272D3 /* Sources */,
 				C9F772E12479AA10006272D3 /* Frameworks */,
 				C9F772E22479AA10006272D3 /* Resources */,
+				C930DD0C24A3EDD300E2E922 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C930DD0B24A3EDD300E2E922 /* PBXTargetDependency */,
 			);
 			name = EssentialFeediOS;
 			productName = EssentialFeediOS;
@@ -689,6 +723,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C930DD0B24A3EDD300E2E922 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9ECACBA23AE670B00BD3E83 /* EssentialFeed */;
+			targetProxy = C930DD0A24A3EDD300E2E922 /* PBXContainerItemProxy */;
+		};
 		C9C8D0382427973200BF34E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9ECACBA23AE670B00BD3E83 /* EssentialFeed */;
