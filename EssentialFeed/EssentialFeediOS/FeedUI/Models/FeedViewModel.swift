@@ -6,7 +6,6 @@
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //
 
-import Foundation
 import EssentialFeed
 
 final class FeedViewModel {
