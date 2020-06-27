@@ -258,12 +258,12 @@
 			path = FeedUI;
 			sourceTree = "<group>";
 		};
-		C988692A24A7946F004C01F8 /* Feed Image Loader */ = {
+		C988692A24A7946F004C01F8 /* FeedImageLoader */ = {
 			isa = PBXGroup;
 			children = (
 				C988692724A79446004C01F8 /* FeedImageDataLoader.swift */,
 			);
-			path = "Feed Image Loader";
+			path = FeedImageLoader;
 			sourceTree = "<group>";
 		};
 		C988692B24A79482004C01F8 /* Controllers */ = {
@@ -456,7 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F772E72479AA10006272D3 /* Info.plist */,
-				C988692A24A7946F004C01F8 /* Feed Image Loader */,
+				C988692A24A7946F004C01F8 /* FeedImageLoader */,
 				C988692924A79467004C01F8 /* FeedUI */,
 			);
 			path = EssentialFeediOS;
