@@ -160,6 +160,7 @@
 		C988695424A8E592004C01F8 /* FeedUIIntegrationTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Assertions.swift"; sourceTree = "<group>"; };
 		C988695724A8E89E004C01F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		C988695924A8E932004C01F8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		C988695A24A8E966004C01F8 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		C993BCEE23B0E2CD0060DAB8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		C993BCF023B0E30D0060DAB8 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		C993BCF323B106270060DAB8 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
@@ -718,6 +719,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = C9ECACB123AE670B00BD3E83;
 			productRefGroup = C9ECACBC23AE670B00BD3E83 /* Products */;
@@ -921,6 +923,7 @@
 			children = (
 				C988695724A8E89E004C01F8 /* en */,
 				C988695924A8E932004C01F8 /* pt-BR */,
+				C988695A24A8E966004C01F8 /* el */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
