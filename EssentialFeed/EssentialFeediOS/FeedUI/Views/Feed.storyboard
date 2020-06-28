@@ -77,6 +77,9 @@ Location</string>
                                                             <state key="normal" title="↻">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="jZC-b3-0tZ" eventType="touchUpInside" id="gTs-cf-L0v"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,6 +121,14 @@ Location</string>
                                         <constraint firstAttribute="trailingMargin" secondItem="BOu-Mq-Fkv" secondAttribute="trailing" id="hgm-19-VlL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="7nR-JZ-JvY" id="Rxn-YL-MG9"/>
+                                    <outlet property="feedImageContainer" destination="8wp-Q2-u7r" id="TSn-ZP-sHJ"/>
+                                    <outlet property="feedImageRetryButton" destination="XDG-fu-xP7" id="nOL-zF-0p3"/>
+                                    <outlet property="feedImageView" destination="PVd-bq-ubg" id="7c2-68-ds5"/>
+                                    <outlet property="locationContainer" destination="Mmh-Cx-4fh" id="o7q-Jy-nqA"/>
+                                    <outlet property="locationLabel" destination="IBb-0p-K5k" id="gPM-eF-2ce"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

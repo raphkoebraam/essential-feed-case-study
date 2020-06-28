@@ -38,7 +38,7 @@ final public class FeedTableViewController: UITableViewController, UITableViewDa
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellController(at: indexPath).view()
+        return cellController(at: indexPath).view(in: tableView)
     }
     
     private func cellController(at indexPath: IndexPath) -> FeedImageCellController {
