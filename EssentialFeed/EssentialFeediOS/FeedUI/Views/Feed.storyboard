@@ -35,6 +35,9 @@
                                 <constraint firstAttribute="bottom" secondItem="0sf-l2-sW9" secondAttribute="bottom" constant="8" id="Rja-ex-H0A"/>
                                 <constraint firstItem="0sf-l2-sW9" firstAttribute="top" secondItem="H0d-yI-wK4" secondAttribute="top" constant="8" id="lT4-1d-XUe"/>
                             </constraints>
+                            <connections>
+                                <outlet property="label" destination="0sf-l2-sW9" id="gLI-wp-Xwj"/>
+                            </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="k3p-ac-J75">
                             <rect key="frame" x="0.0" y="670" width="414" height="16"/>
