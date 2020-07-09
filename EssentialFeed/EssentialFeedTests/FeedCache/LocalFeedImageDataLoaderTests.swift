@@ -23,7 +23,7 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
         
         _ = sut.loadImageData(from: url) { _ in }
         
-        XCTAssertEqual(store.receivedMessages, [.retrieveData(url: url)])
+        XCTAssertEqual(store.receivedMessages, [.retrieve(for: url)])
     }
     
     func test_loadImageDataFromURL_failsOnStoreError() {
@@ -132,7 +132,7 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
         
         enum Message: Equatable {
             case insert(data: Data, for: URL)
-            case retrieveData(url: URL)
+            case retrieve(for: URL)
         }
         
         private(set) var receivedMessages = [Message]()
@@ -143,7 +143,7 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
         }
         
         func retrieveData(for url: URL, completion: @escaping (FeedImageDataStore.Result) -> Void) {
-            receivedMessages.append(.retrieveData(url: url))
+            receivedMessages.append(.retrieve(for: url))
             completions.append(completion)
         }
         
