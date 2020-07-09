@@ -69,8 +69,8 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
         let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
         let loader = RemoteFeedImageDataLoader(client: client)
-        trackMemoryLeaks(client)
-        trackMemoryLeaks(loader)
+        trackMemoryLeaks(client, file: file, line: line)
+        trackMemoryLeaks(loader, file: file, line: line)
         
         let exp = expectation(description: "Wait for load completion")
         
