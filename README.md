@@ -110,7 +110,7 @@ Given the customer doesn't have connectivity
 1. System delivers no feed images.
 
 #### Empty cache course (sad path):
-1. System delivers no feed images.
+1. System delivers not found error.
 
 ---
 
