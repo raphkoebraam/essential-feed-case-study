@@ -13,6 +13,10 @@ public final class CoreDataFeedStore {
     
     private let persistentContainer: NSPersistentContainer
     private let context: NSManagedObjectContext
+    
+    deinit {
+        cleanUpReferencesToPresistentStores()
+    }
 
     public init(url: URL) throws {
         let bundle = Bundle(for: CoreDataFeedStore.self)
@@ -23,5 +27,12 @@ public final class CoreDataFeedStore {
     func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
         let context = self.context
         context.perform { action(context) }
+    }
+    
+    private func cleanUpReferencesToPresistentStores() {
+        context.performAndWait {
+            let coordinator = self.persistentContainer.persistentStoreCoordinator
+            try? coordinator.persistentStores.forEach(coordinator.remove)
+        }
     }
 }
