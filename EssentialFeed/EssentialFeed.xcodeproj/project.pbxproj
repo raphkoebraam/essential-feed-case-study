@@ -242,6 +242,7 @@
 		C9F3C38524B8FAFC00F0F466 /* FeedImageDataStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStoreSpy.swift; sourceTree = "<group>"; };
 		C9F3C38724B8FC6F00F0F466 /* CacheFeedImageDataUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedImageDataUseCaseTests.swift; sourceTree = "<group>"; };
 		C9F3C38924B9B74200F0F466 /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
+		C9F3C38B24B9C03B00F0F466 /* CoreDataFeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFeedStore2.xcdatamodel; sourceTree = "<group>"; };
 		C9F772E42479AA10006272D3 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F772E72479AA10006272D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9F772EC2479AA11006272D3 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1514,9 +1515,10 @@
 		C9C8D0242427688900BF34E0 /* CoreDataFeedStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C9F3C38B24B9C03B00F0F466 /* CoreDataFeedStore2.xcdatamodel */,
 				C9C8D0252427688900BF34E0 /* CoreDataFeedStore.xcdatamodel */,
 			);
-			currentVersion = C9C8D0252427688900BF34E0 /* CoreDataFeedStore.xcdatamodel */;
+			currentVersion = C9F3C38B24B9C03B00F0F466 /* CoreDataFeedStore2.xcdatamodel */;
 			path = CoreDataFeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

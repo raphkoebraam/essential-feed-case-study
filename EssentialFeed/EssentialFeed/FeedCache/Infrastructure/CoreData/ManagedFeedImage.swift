@@ -15,6 +15,7 @@ internal class ManagedFeedImage: NSManagedObject {
     @NSManaged internal var imageDescription: String?
     @NSManaged internal var location: String?
     @NSManaged internal var url: URL
+    @NSManaged internal var data: Data?
     @NSManaged internal var cache: ManagedCache
 }
 
