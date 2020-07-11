@@ -11,6 +11,14 @@ import CoreData
 
 public final class CoreDataFeedStore {
     
+    private static let modelName = "CoreDataFeedStore"
+    private static let model = NSManagedObjectModel.with(name: modelName, in: Bundle(for: CoreDataFeedStore.self))
+    
+    enum StoreError: Error {
+        case modelNotFound
+        case failedToLoadPersistentStores(Error)
+    }
+    
     private let persistentContainer: NSPersistentContainer
     private let context: NSManagedObjectContext
     
@@ -19,9 +27,16 @@ public final class CoreDataFeedStore {
     }
 
     public init(url: URL) throws {
-        let bundle = Bundle(for: CoreDataFeedStore.self)
-        persistentContainer = try NSPersistentContainer.load(modelName: "CoreDataFeedStore", url: url, in: bundle)
-        context = persistentContainer.newBackgroundContext()
+        guard let model = CoreDataFeedStore.model else {
+            throw StoreError.modelNotFound
+        }
+        
+        do {
+            persistentContainer = try NSPersistentContainer.load(name: CoreDataFeedStore.modelName, model: model, url: url)
+            context = persistentContainer.newBackgroundContext()
+        } catch {
+            throw StoreError.failedToLoadPersistentStores(error)
+        }
     }
     
     func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
