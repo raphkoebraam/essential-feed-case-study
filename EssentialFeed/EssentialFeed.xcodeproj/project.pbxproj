@@ -96,6 +96,7 @@
 		C9F3C38624B8FAFC00F0F466 /* FeedImageDataStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C38524B8FAFC00F0F466 /* FeedImageDataStoreSpy.swift */; };
 		C9F3C38824B8FC6F00F0F466 /* CacheFeedImageDataUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C38724B8FC6F00F0F466 /* CacheFeedImageDataUseCaseTests.swift */; };
 		C9F3C38A24B9B74200F0F466 /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C38924B9B74200F0F466 /* CoreDataFeedImageDataStoreTests.swift */; };
+		C9F3C38D24B9C3C700F0F466 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C38C24B9C3C700F0F466 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
 		C9F772ED2479AA11006272D3 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F772E42479AA10006272D3 /* EssentialFeediOS.framework */; };
 		C9FDF17823B14EB800FEE34B /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FDF17723B14EB800FEE34B /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
@@ -243,6 +244,7 @@
 		C9F3C38724B8FC6F00F0F466 /* CacheFeedImageDataUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedImageDataUseCaseTests.swift; sourceTree = "<group>"; };
 		C9F3C38924B9B74200F0F466 /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
 		C9F3C38B24B9C03B00F0F466 /* CoreDataFeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFeedStore2.xcdatamodel; sourceTree = "<group>"; };
+		C9F3C38C24B9C3C700F0F466 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		C9F772E42479AA10006272D3 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F772E72479AA10006272D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9F772EC2479AA11006272D3 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -451,6 +453,7 @@
 				C9C8D0222427688900BF34E0 /* CoreDataHelpers.swift */,
 				C9C8D0202427688900BF34E0 /* ManagedCache.swift */,
 				C9C8D0232427688900BF34E0 /* ManagedFeedImage.swift */,
+				C9F3C38C24B9C3C700F0F466 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				C97DCE5B24AD03D300B15F76 /* FeedImageDataLoader.swift in Sources */,
 				C9ECACD623AE687400BD3E83 /* FeedImage.swift in Sources */,
 				C9B1A70724B7C51900997611 /* LocalFeedImageDataLoader.swift in Sources */,
+				C9F3C38D24B9C3C700F0F466 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
 				C9D2029624ABDA9F007B785E /* FeedLoadingViewModel.swift in Sources */,
 				C9FDF17823B14EB800FEE34B /* URLSessionHTTPClient.swift in Sources */,
 			);
