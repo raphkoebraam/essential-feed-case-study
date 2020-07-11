@@ -10,22 +10,22 @@ import Foundation
 import CoreData
 
 @objc(ManagedFeedImage)
-internal class ManagedFeedImage: NSManagedObject {
-    @NSManaged internal var id: UUID
-    @NSManaged internal var imageDescription: String?
-    @NSManaged internal var location: String?
-    @NSManaged internal var url: URL
-    @NSManaged internal var data: Data?
-    @NSManaged internal var cache: ManagedCache
+class ManagedFeedImage: NSManagedObject {
+    @NSManaged var id: UUID
+    @NSManaged var imageDescription: String?
+    @NSManaged var location: String?
+    @NSManaged var url: URL
+    @NSManaged var data: Data?
+    @NSManaged var cache: ManagedCache
 }
 
 extension ManagedFeedImage {
     
-    internal var local: LocalFeedImage {
+    var local: LocalFeedImage {
         return LocalFeedImage(id: id, description: imageDescription, location: location, url: url)
     }
     
-    internal static func first(with url: URL, in context: NSManagedObjectContext) throws -> ManagedFeedImage? {
+    static func first(with url: URL, in context: NSManagedObjectContext) throws -> ManagedFeedImage? {
         let request = NSFetchRequest<ManagedFeedImage>(entityName: entity().name!)
         request.predicate = NSPredicate(format: "%K = %@", argumentArray: [#keyPath(ManagedFeedImage.url), url])
         request.returnsObjectsAsFaults = false
@@ -33,7 +33,7 @@ extension ManagedFeedImage {
         return try context.fetch(request).first
     }
     
-    internal static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
+    static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
         let managedFeed: [ManagedFeedImage] = localFeed.map {
             let managed = ManagedFeedImage(context: context)
             managed.id = $0.id

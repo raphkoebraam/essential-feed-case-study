@@ -11,7 +11,7 @@ import CoreData
 
 // MARK: - NSPersistentContainer Extension
 
-internal extension NSPersistentContainer {
+extension NSPersistentContainer {
     enum LoadError: Swift.Error {
         case didNotFindModel
         case didFailToLoadPersistentStores(Swift.Error)
