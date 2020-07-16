@@ -1,7 +1,4 @@
 //
-//  FeedCacheTestHelpers.swift
-//  EssentialFeedTests
-//
 //  Created by Raphael Silva on 26/12/2019.
 //  Copyright © 2019 Raphael Silva. All rights reserved.
 //

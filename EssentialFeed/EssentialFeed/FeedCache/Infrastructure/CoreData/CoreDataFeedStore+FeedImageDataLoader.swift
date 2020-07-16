@@ -1,7 +1,4 @@
 //
-//  CoreDataFeedStore+FeedImageDataLoader.swift
-//  EssentialFeed
-//
 //  Created by Raphael Silva on 11/07/2020.
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //

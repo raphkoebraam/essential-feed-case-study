@@ -1,7 +1,4 @@
 //
-//  LoadFeedImageDataFromRemoteUseCaseTests.swift
-//  EssentialFeedTests
-//
 //  Created by Raphael Silva on 01/07/2020.
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //

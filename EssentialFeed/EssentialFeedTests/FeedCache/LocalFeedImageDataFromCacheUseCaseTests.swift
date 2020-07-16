@@ -1,7 +1,4 @@
 //
-//  LocalFeedImageDataFromCacheUseCaseTests.swift
-//  EssentialFeedTests
-//
 //  Created by Raphael Silva on 09/07/2020.
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //

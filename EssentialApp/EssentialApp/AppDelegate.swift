@@ -1,7 +1,4 @@
 //
-//  AppDelegate.swift
-//  EssentialApp
-//
 //  Created by Raphael Silva on 12/07/2020.
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //

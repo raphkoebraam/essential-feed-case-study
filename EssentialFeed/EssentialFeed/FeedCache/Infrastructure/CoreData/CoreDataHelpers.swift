@@ -1,9 +1,6 @@
 //
-//  CoreDataHelpers.swift
-//  FeedStoreChallenge
-//
 //  Created by Raphael Silva on 21/03/2020.
-//  Copyright © 2020 Essential Developer. All rights reserved.
+//  Copyright © 2020 Raphael Silva. All rights reserved.
 //
 
 import Foundation
