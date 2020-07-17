@@ -23,6 +23,7 @@
 		C966331C24C200590037D397 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966331B24C200590037D397 /* XCTestCase+MemoryLeakTracking.swift */; };
 		C966331E24C200DA0037D397 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966331D24C200DA0037D397 /* SharedTestHelpers.swift */; };
 		C966332024C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966331F24C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift */; };
+		C966332224C219D90037D397 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966332124C219D90037D397 /* FeedLoaderStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C966331B24C200590037D397 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		C966331D24C200DA0037D397 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		C966331F24C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
+		C966332124C219D90037D397 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				C966331B24C200590037D397 /* XCTestCase+MemoryLeakTracking.swift */,
 				C966331D24C200DA0037D397 /* SharedTestHelpers.swift */,
+				C966332124C219D90037D397 /* FeedLoaderStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				C966331724C097350037D397 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				C95D801D24C0836B00EAB1EA /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				C966332024C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
+				C966332224C219D90037D397 /* FeedLoaderStub.swift in Sources */,
 				C966331C24C200590037D397 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
