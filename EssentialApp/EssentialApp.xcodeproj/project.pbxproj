@@ -25,6 +25,7 @@
 		C966332024C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966331F24C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift */; };
 		C966332224C219D90037D397 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966332124C219D90037D397 /* FeedLoaderStub.swift */; };
 		C966332424C21A560037D397 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966332324C21A560037D397 /* XCTestCase+FeedLoader.swift */; };
+		C966332824C22C070037D397 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966332724C22C070037D397 /* FeedLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C966331F24C2161B0037D397 /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		C966332124C219D90037D397 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		C966332324C21A560037D397 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
+		C966332724C22C070037D397 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				C9278BA624BB0E510078784C /* Info.plist */,
 				C95D801E24C08FE800EAB1EA /* FeedLoaderWithFallbackComposite.swift */,
 				C966331824C1FFC10037D397 /* FeedImageDataLoaderWithFallbackComposite.swift */,
+				C966332724C22C070037D397 /* FeedLoaderCacheDecorator.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				C966331924C1FFC10037D397 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				C9278B9924BB0E4E0078784C /* AppDelegate.swift in Sources */,
 				C95D801F24C08FE800EAB1EA /* FeedLoaderWithFallbackComposite.swift in Sources */,
+				C966332824C22C070037D397 /* FeedLoaderCacheDecorator.swift in Sources */,
 				C9278B9B24BB0E4E0078784C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
