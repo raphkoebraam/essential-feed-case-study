@@ -20,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .defaultDirectoryURL()
             .appendingPathComponent("feed-store.sqlite"))
     }()
+    private lazy var localFeedLoader: LocalFeedLoader = {
+        return LocalFeedLoader(store: store, currentDate: Date.init)
+    }()
     
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
         self.init()
@@ -33,13 +36,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         configureWindow()
     }
     
+    func sceneWillResignActive(_ scene: UIScene) {
+        localFeedLoader.validateCache(completion: { _ in })
+    }
+    
     func configureWindow() {
         let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
         
         let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
         let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
         
-        let localFeedLoader = LocalFeedLoader(store: store, currentDate: Date.init)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
         window?.rootViewController = UINavigationController(rootViewController: FeedUIComposer.feedComposed(withFeedLoader: FeedLoaderWithFallbackComposite(primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader,
