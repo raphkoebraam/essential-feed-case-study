@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RY9-b1-mjD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RY9-b1-mjD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -91,6 +91,7 @@ Location</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVd-bq-ubg">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="feed-image-view"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-fu-xP7">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
@@ -142,6 +143,7 @@ Location</string>
                                         <constraint firstAttribute="trailingMargin" secondItem="BOu-Mq-Fkv" secondAttribute="trailing" id="hgm-19-VlL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="feed-image-cell"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="7nR-JZ-JvY" id="Rxn-YL-MG9"/>
                                     <outlet property="feedImageContainer" destination="8wp-Q2-u7r" id="TSn-ZP-sHJ"/>
