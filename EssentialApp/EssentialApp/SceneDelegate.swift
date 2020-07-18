@@ -46,11 +46,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
         window?.rootViewController = UINavigationController(rootViewController: FeedUIComposer.feedComposed(withFeedLoader: FeedLoaderWithFallbackComposite(primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader,
-                                                                                                                                                   cache: localFeedLoader),
-                                                                                                                 fallback: localFeedLoader),
-                                                                 imageLoader: FeedImageDataLoaderWithFallbackComposite(primary: localImageLoader,
-                                                                                                                       fallback: FeedImageDataLoaderCacheDecorator(decoratee: remoteImageLoader,
-                                                                                                                                                                   cache: localImageLoader))))
+                                                                                                                                                                                              cache: localFeedLoader),
+                                                                                                                                                            fallback: localFeedLoader),
+                                                                                                            imageLoader: FeedImageDataLoaderWithFallbackComposite(primary: localImageLoader,
+                                                                                                                                                                  fallback: FeedImageDataLoaderCacheDecorator(decoratee: remoteImageLoader,
+                                                                                                                                                                                                              cache: localImageLoader))))
     }
     
     func makeRemoteClient() -> HTTPClient {
