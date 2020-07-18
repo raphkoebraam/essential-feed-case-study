@@ -31,6 +31,7 @@
 		C966332F24C2426D0037D397 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966332E24C2426D0037D397 /* XCTestCase+FeedImageDataLoader.swift */; };
 		C966333324C246700037D397 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966333224C246700037D397 /* FeedImageDataLoaderCacheDecorator.swift */; };
 		C966333B24C30FA90037D397 /* EssentialAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966333A24C30FA90037D397 /* EssentialAppUIAcceptanceTests.swift */; };
+		C966334324C31E3A0037D397 /* DebugginSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966334224C31E3A0037D397 /* DebugginSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		C966333824C30FA90037D397 /* EssentialAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C966333A24C30FA90037D397 /* EssentialAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		C966333C24C30FA90037D397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C966334224C31E3A0037D397 /* DebugginSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugginSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				C966331824C1FFC10037D397 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				C966332724C22C070037D397 /* FeedLoaderCacheDecorator.swift */,
 				C966333224C246700037D397 /* FeedImageDataLoaderCacheDecorator.swift */,
+				C966334224C31E3A0037D397 /* DebugginSceneDelegate.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			files = (
 				C966331924C1FFC10037D397 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				C9278B9924BB0E4E0078784C /* AppDelegate.swift in Sources */,
+				C966334324C31E3A0037D397 /* DebugginSceneDelegate.swift in Sources */,
 				C95D801F24C08FE800EAB1EA /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				C966333324C246700037D397 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 				C966332824C22C070037D397 /* FeedLoaderCacheDecorator.swift in Sources */,
