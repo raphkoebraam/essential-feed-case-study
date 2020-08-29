@@ -1,5 +1,8 @@
 # Essential Feed App – Image Feed Feature
 
+![](https://github.com/peagasilva/essential-feed-case-study/workflows/CI-iOS/badge.svg)
+![](https://github.com/peagasilva/essential-feed-case-study/workflows/CI-macOS/badge.svg)
+
 ## BDD Specs
 
 ### Story: Customer requests to see their image feed
