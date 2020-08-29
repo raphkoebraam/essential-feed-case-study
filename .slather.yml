@@ -1,5 +1,0 @@
-coverage_service: cobertura_xml
-xcodeproj: EssentialFeed/EssentialFeed.xcodeproj
-scheme: CI
-output_directory: test-reports/slather/
-ignore:
