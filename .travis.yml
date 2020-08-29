@@ -1,4 +1,0 @@
-# os: osx
-# osx_image: xcode11.6
-# language: swift
-# script: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
