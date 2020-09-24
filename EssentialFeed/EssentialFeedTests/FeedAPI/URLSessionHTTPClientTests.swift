@@ -34,7 +34,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         let receivedError = resultError(for: (data: nil, response: nil, error: requestError))
         
-        XCTAssertEqual(receivedError as NSError?, requestError)
+        XCTAssertNotNil(receivedError)
     }
     
     /** Invalid States
