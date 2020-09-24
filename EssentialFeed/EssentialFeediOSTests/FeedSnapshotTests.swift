@@ -83,7 +83,7 @@ class FeedSnapshotTests: XCTestCase {
         ]
     }
     
-    private func assert(snapshot: UIImage, named name: String, file: StaticString = #file, line: UInt = #line) {
+    private func assert(snapshot: UIImage, named name: String, file: StaticString = #filePath, line: UInt = #line) {
         let snapshotURL = makeSnapshotURL(named: name, file: file)
         let snapshotData = makeSnapshotData(for: snapshot, file: file, line: line)
         
@@ -102,7 +102,7 @@ class FeedSnapshotTests: XCTestCase {
         }
     }
     
-    private func record(snapshot: UIImage, named name: String, file: StaticString = #file, line: UInt = #line) {
+    private func record(snapshot: UIImage, named name: String, file: StaticString = #filePath, line: UInt = #line) {
         let snapshotURL = makeSnapshotURL(named: name, file: file)
         let snapshotData = makeSnapshotData(for: snapshot, file: file, line: line)
         
