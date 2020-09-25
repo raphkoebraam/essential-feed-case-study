@@ -8,7 +8,7 @@ import XCTest
 import EssentialFeed
 
 extension FeedUIIntegrationTests {
-    func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
+    func localized(_ key: String, file: StaticString = #filePath, line: UInt = #line) -> String {
         let table = "Feed"
         
         let bundle = Bundle(for: FeedPresenter.self)

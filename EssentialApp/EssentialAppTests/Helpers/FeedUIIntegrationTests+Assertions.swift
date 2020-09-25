@@ -7,7 +7,7 @@ import XCTest
 import EssentialFeed
 import EssentialFeediOS
 
-func assert(_ sut: FeedTableViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) {
+func assert(_ sut: FeedTableViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #filePath, line: UInt = #line) {
     let view = sut.feedImageView(at: index)
     
     guard let cell = view as? FeedImageTableViewCell else {
@@ -20,7 +20,7 @@ func assert(_ sut: FeedTableViewController, hasViewConfiguredFor image: FeedImag
     XCTAssertEqual(cell.descriptionText, image.description, "Expected location text to be \(String(describing: image.description)) for image view at index \(index)", file: file, line: line)
 }
 
-func assert(_ sut: FeedTableViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) {
+func assert(_ sut: FeedTableViewController, isRendering feed: [FeedImage], file: StaticString = #filePath, line: UInt = #line) {
     sut.tableView.layoutIfNeeded()
     RunLoop.main.run(until: Date())
     
