@@ -21,8 +21,7 @@ func assert(_ sut: FeedTableViewController, hasViewConfiguredFor image: FeedImag
 }
 
 func assert(_ sut: FeedTableViewController, isRendering feed: [FeedImage], file: StaticString = #filePath, line: UInt = #line) {
-    sut.tableView.layoutIfNeeded()
-    RunLoop.main.run(until: Date())
+    sut.view.enforceLayoutCycle()
     
     let numberOfRenderedFeedImageViews = sut.numberOfRenderedFeedImageViews()
     let feedCount = feed.count
