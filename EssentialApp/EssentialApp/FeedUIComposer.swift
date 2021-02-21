@@ -11,22 +11,37 @@ public final class FeedUIComposer {
     
     private init() {}
     
-    public static func feedComposed(withFeedLoader feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedTableViewController {
-        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: MainQueueDispatchDecorator(decoratee: feedLoader))
+    public static func feedComposed(
+        withFeedLoader feedLoader: @escaping () -> FeedLoader.Publisher,
+        imageLoader: FeedImageDataLoader
+    ) -> FeedTableViewController {
+        let presentationAdapter = FeedLoaderPresentationAdapter(
+            feedLoader: { feedLoader().dispatchOnMainQueue() }
+        )
         
-        let feedController = makeFeedTableViewController(delegate: presentationAdapter,
-                                                         title: FeedPresenter.title)
+        let feedController = makeFeedTableViewController(
+            delegate: presentationAdapter,
+            title: FeedPresenter.title
+        )
         
         feedController.delegate = presentationAdapter
-        presentationAdapter.presenter = FeedPresenter(feedView: FeedViewAdapter(controller: feedController,
-                                                                                imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
-                                                      loadingView: WeakReferenceVirtualProxy(feedController),
-                                                      errorView: WeakReferenceVirtualProxy(feedController))
+        presentationAdapter.presenter = FeedPresenter(
+            feedView: FeedViewAdapter(
+                controller: feedController,
+                imageLoader: MainQueueDispatchDecorator(
+                    decoratee: imageLoader
+                )
+            ),
+            loadingView: WeakReferenceVirtualProxy(feedController),
+            errorView: WeakReferenceVirtualProxy(feedController))
         
         return feedController
     }
 
-    static func makeFeedTableViewController(delegate: FeedTableViewControllerDelegate, title: String) -> FeedTableViewController {
+    static func makeFeedTableViewController(
+        delegate: FeedTableViewControllerDelegate,
+        title: String
+    ) -> FeedTableViewController {
         let bundle = Bundle(for: FeedTableViewController.self)
         let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
         let feedController = storyboard.instantiateInitialViewController() as! FeedTableViewController
