@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal final class ImageCommentsMapper {
+public final class ImageCommentsMapper {
 
     private struct Root: Decodable {
         private let items: [Item]
@@ -36,7 +36,7 @@ internal final class ImageCommentsMapper {
         }
     }
 
-    internal static func map(
+    public static func map(
         data: Data,
         from response: HTTPURLResponse
     ) throws -> [ImageComment] {
