@@ -35,6 +35,7 @@
 		C966339224C338C10037D397 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966339124C338C10037D397 /* FeedUIIntegrationTests.swift */; };
 		C966339424C33A830037D397 /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966339324C33A830037D397 /* FeedAcceptanceTests.swift */; };
 		C9D2ABE8251F58E200362FAF /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2ABE7251F58E200362FAF /* UIView+TestHelpers.swift */; };
+		C9F8444A25E2FBCF0099FD1D /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F8444925E2FBCF0099FD1D /* CombineHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		C966339124C338C10037D397 /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		C966339324C33A830037D397 /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
 		C9D2ABE7251F58E200362FAF /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
+		C9F8444925E2FBCF0099FD1D /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				C9278BA124BB0E510078784C /* Assets.xcassets */,
 				C9278BA324BB0E510078784C /* LaunchScreen.storyboard */,
 				C9278BA624BB0E510078784C /* Info.plist */,
+				C9F8444925E2FBCF0099FD1D /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				C966337A24C3388F0037D397 /* WeakReferenceVirtualProxy.swift in Sources */,
 				C9278B9B24BB0E4E0078784C /* SceneDelegate.swift in Sources */,
 				C966337E24C3388F0037D397 /* FeedViewAdapter.swift in Sources */,
+				C9F8444A25E2FBCF0099FD1D /* CombineHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
