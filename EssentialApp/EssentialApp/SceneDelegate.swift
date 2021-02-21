@@ -12,7 +12,7 @@ import EssentialFeediOS
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
+
     private lazy var httpClient: HTTPClient = {
         return URLSessionHTTPClient(
             session: URLSession(configuration: .ephemeral)
@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var localFeedLoader: LocalFeedLoader = {
         return LocalFeedLoader(store: store, currentDate: Date.init)
     }()
-    
+
     convenience init(
         httpClient: HTTPClient,
         store: FeedStore & FeedImageDataStore
@@ -43,17 +43,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         window = UIWindow(windowScene: windowScene)
         configureWindow()
     }
-    
+
     func sceneWillResignActive(
         _ scene: UIScene
     ) {
         localFeedLoader.validateCache(completion: { _ in })
     }
-    
+
     func configureWindow() {
         window?.rootViewController = UINavigationController(
             rootViewController: FeedUIComposer.feedComposed(
