@@ -3,6 +3,7 @@
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //
 
+import Combine
 import UIKit
 import EssentialFeed
 import EssentialFeediOS
@@ -12,7 +13,7 @@ public final class FeedUIComposer {
     private init() {}
     
     public static func feedComposed(
-        withFeedLoader feedLoader: @escaping () -> FeedLoader.Publisher,
+        withFeedLoader feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>,
         imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
     ) -> FeedTableViewController {
         let presentationAdapter = FeedLoaderPresentationAdapter(
