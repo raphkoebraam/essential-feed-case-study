@@ -23,6 +23,7 @@ final class FeedLoaderPresentationAdapter: FeedTableViewControllerDelegate {
     func didRequestFeedRefresh() {
         presenter?.didStartLoadingFeed()
         feedLoader()
+            .dispatchOnMainQueue()
             .sink(receiveCompletion: { [weak self] in
                 switch $0 {
                 case .finished:

@@ -38,6 +38,7 @@ where
         let model = self.model
 
         cancellable = imageLoader(model.url)
+            .dispatchOnMainQueue()
             .sink(receiveCompletion: { [weak self] in
                 switch $0 {
                 case .finished:

@@ -16,7 +16,7 @@ public final class FeedUIComposer {
         imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
     ) -> FeedTableViewController {
         let presentationAdapter = FeedLoaderPresentationAdapter(
-            feedLoader: { feedLoader().dispatchOnMainQueue() }
+            feedLoader: feedLoader
         )
         
         let feedController = makeFeedTableViewController(
@@ -28,7 +28,7 @@ public final class FeedUIComposer {
         presentationAdapter.presenter = FeedPresenter(
             feedView: FeedViewAdapter(
                 controller: feedController,
-                imageLoader: { imageLoader($0).dispatchOnMainQueue() }
+                imageLoader: imageLoader
             ),
             loadingView: WeakReferenceVirtualProxy(feedController),
             errorView: WeakReferenceVirtualProxy(feedController))
