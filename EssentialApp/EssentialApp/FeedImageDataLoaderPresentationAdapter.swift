@@ -3,17 +3,31 @@
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //
 
+import Combine
 import EssentialFeed
 import EssentialFeediOS
+import Foundation
 
-final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: FeedImageCellControllerDelegate where View.Image == Image {
+final class FeedImageDataLoaderPresentationAdapter<
+    View: FeedImageView,
+    Image
+>:
+    FeedImageCellControllerDelegate
+where
+    View.Image == Image
+{
     private let model: FeedImage
-    private let imageLoader: FeedImageDataLoader
-    private var task: FeedImageDataLoaderTask?
+
+    private let imageLoader: (URL) -> FeedImageDataLoader.Publisher
+
+    private var cancellable: Cancellable?
     
     var presenter: FeedImagePresenter<View, Image>?
     
-    init(model: FeedImage, imageLoader: FeedImageDataLoader) {
+    init(
+        model: FeedImage,
+        imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
+    ) {
         self.model = model
         self.imageLoader = imageLoader
     }
@@ -22,17 +36,29 @@ final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: 
         presenter?.didStartLoadingImageData(for: model)
         
         let model = self.model
-        task = imageLoader.loadImageData(from: model.url, completion: { [weak self] (result) in
-            switch result {
-            case let .success(data):
-                self?.presenter?.didFinishLoadingImageData(with: data, for: model)
-            case let .failure(error):
-                self?.presenter?.didFinishLoadingImageData(with: error, for: model)
-            }
-        })
+
+        cancellable = imageLoader(model.url)
+            .dispatchOnMainQueue()
+            .sink(receiveCompletion: { [weak self] in
+                switch $0 {
+                case .finished:
+                    break
+
+                case let .failure(error):
+                    self?.presenter?.didFinishLoadingImageData(
+                        with: error,
+                        for: model
+                    )
+                }
+            }, receiveValue: { [weak self] in
+                self?.presenter?.didFinishLoadingImageData(
+                    with: $0,
+                    for: model
+                )
+            })
     }
     
     func didCancelImageRequest() {
-        task?.cancel()
+        cancellable?.cancel()
     }
 }
