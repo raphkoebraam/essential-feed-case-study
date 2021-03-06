@@ -18,7 +18,7 @@ public final class ImageCommentsMapper {
                 ImageComment(
                     id: $0.id,
                     message: $0.message,
-                    createAt: $0.created_at,
+                    createdAt: $0.created_at,
                     username: $0.author.username
                 )
             }
