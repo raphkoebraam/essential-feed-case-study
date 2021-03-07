@@ -32,7 +32,7 @@ public final class FeedPresenter {
     
     private var errorMessage: String {
         return NSLocalizedString("GENERIC_CONNECTION_ERROR",
-                                 tableName: "Feed",
+                                 tableName: "Shared",
                                  bundle: Bundle(for: FeedPresenter.self),
                                  comment: "Message for the error view")
     }
