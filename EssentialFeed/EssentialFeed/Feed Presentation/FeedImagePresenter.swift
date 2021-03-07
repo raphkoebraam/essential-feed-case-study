@@ -17,6 +17,15 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
     
     private let view: View
     private let imageTransformer: (Data) -> Image?
+
+    public static func map(_ image: FeedImage) -> FeedImageViewModel<Image> {
+        FeedImageViewModel(
+            description: image.description,
+            location: image.location,
+            image: nil,
+            isLoading: false,
+            shouldRetry: false)
+    }
     
     public init(view: View, imageTransformer: @escaping (Data) -> Image?) {
         self.view = view
