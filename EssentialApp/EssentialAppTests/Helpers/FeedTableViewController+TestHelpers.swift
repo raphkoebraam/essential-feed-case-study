@@ -10,7 +10,7 @@ import EssentialFeediOS
 extension ListViewController {
     
     var errorMessage: String? {
-        return errorView?.message
+        return errorView.message
     }
     
     var isShowingLoadingIndicator: Bool {
@@ -19,6 +19,10 @@ extension ListViewController {
     
     private var feedImagesSection: Int {
         return 0
+    }
+
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
     }
     
     func simulateUserInitiatedFeedReload() {
