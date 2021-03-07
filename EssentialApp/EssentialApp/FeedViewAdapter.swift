@@ -8,6 +8,9 @@ import EssentialFeed
 import EssentialFeediOS
 
 final class FeedViewAdapter: ResourceView {
+
+    private typealias ImageDataPresentationAdapter = ResourceLoaderPresentationAdapter<Data, WeakReferenceVirtualProxy<FeedImageCellController>>
+
     
     private weak var controller: FeedTableViewController?
     private let imageLoader: (URL) -> FeedImageDataLoader.Publisher
@@ -22,7 +25,7 @@ final class FeedViewAdapter: ResourceView {
     
     func display(_ viewModel: FeedViewModel) {
         controller?.display(viewModel.feed.map { model in
-            let adapter = ResourceLoaderPresentationAdapter<Data, WeakReferenceVirtualProxy<FeedImageCellController>>(loader: { [imageLoader] in
+            let adapter = ImageDataPresentationAdapter(loader: { [imageLoader] in
                 imageLoader(model.url)
             })
             
