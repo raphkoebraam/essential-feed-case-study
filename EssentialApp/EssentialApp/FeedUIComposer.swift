@@ -9,6 +9,7 @@ import EssentialFeed
 import EssentialFeediOS
 
 public final class FeedUIComposer {
+    private typealias FeedPresentationAdapter = ResourceLoaderPresentationAdapter<[FeedImage], FeedViewAdapter>
     
     private init() {}
     
@@ -16,8 +17,8 @@ public final class FeedUIComposer {
         withFeedLoader feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>,
         imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
     ) -> FeedTableViewController {
-        let presentationAdapter = FeedLoaderPresentationAdapter(
-            feedLoader: feedLoader
+        let presentationAdapter = FeedPresentationAdapter(
+            loader: feedLoader
         )
         
         let feedController = makeFeedTableViewController(
@@ -26,13 +27,14 @@ public final class FeedUIComposer {
         )
         
         feedController.delegate = presentationAdapter
-        presentationAdapter.presenter = FeedPresenter(
-            feedView: FeedViewAdapter(
+        presentationAdapter.presenter = LoadResourcePresenter(
+            resourceView: FeedViewAdapter(
                 controller: feedController,
                 imageLoader: imageLoader
             ),
             loadingView: WeakReferenceVirtualProxy(feedController),
-            errorView: WeakReferenceVirtualProxy(feedController))
+            errorView: WeakReferenceVirtualProxy(feedController),
+            mapper: FeedPresenter.map)
         
         return feedController
     }

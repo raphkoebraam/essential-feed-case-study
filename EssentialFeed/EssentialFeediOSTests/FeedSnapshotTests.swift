@@ -195,7 +195,7 @@ extension UIViewController {
 private extension FeedTableViewController {
     func display(_ stubs: [ImageStub]) {
         let cells: [FeedImageCellController] = stubs.map { stub in
-            let cellController = FeedImageCellController(delegate: stub)
+            let cellController = FeedImageCellController(viewModel: stub.viewModel, delegate: stub)
             stub.controller = cellController
             return cellController
         }
@@ -207,18 +207,25 @@ private extension FeedTableViewController {
 private class ImageStub: FeedImageCellControllerDelegate {
     
     weak var controller: FeedImageCellController?
-    let viewModel: FeedImageViewModel<UIImage>
+    let viewModel: FeedImageViewModel
+    let image: UIImage?
     
     init(description: String?, location: String?, image: UIImage?) {
-        viewModel = FeedImageViewModel(description: description,
-                                       location: location,
-                                       image: image,
-                                       isLoading: false,
-                                       shouldRetry: image == nil)
+        self.viewModel = FeedImageViewModel(
+            description: description,
+            location: location)
+        self.image = image
     }
     
     func didRequestImage() {
-        controller?.display(viewModel)
+        controller?.display(.init(isLoading: false))
+
+        if let image = image {
+            controller?.display(image)
+            controller?.display(.noError)
+        } else {
+            controller?.display(ResourceErrorViewModel(message: "any"))
+        }
     }
     
     func didCancelImageRequest() {}
