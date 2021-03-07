@@ -28,14 +28,15 @@ class LoadResourcePresenterTests: XCTestCase {
         ])
     }
 
-    func test_didFinishLoadingFeed_displaysFeedAndStopsLoading() {
-        let (sut, view) = makeSUT()
-        let feed = uniqueImageFeed().model
+    func test_didFinishLoading_displaysResourceAndStopsLoading() {
+        let (sut, view) = makeSUT(mapper: { resource in
+            resource + " view model"
+        })
 
-        sut.didFinishLoadingFeed(with: feed)
+        sut.didFinishLoading(with: "resource")
 
         XCTAssertEqual(view.messages, [
-            .display(feed: feed),
+            .display(resourceViewModel: "resource view model"),
             .display(isLoading: false)
         ])
     }
@@ -53,9 +54,13 @@ class LoadResourcePresenterTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LoadResourcePresenter, view: ViewSpy) {
+    private func makeSUT(
+        mapper: @escaping LoadResourcePresenter.Mapper = { _ in "any" },
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (sut: LoadResourcePresenter, view: ViewSpy) {
         let view = ViewSpy()
-        let sut = LoadResourcePresenter(feedView: view, loadingView: view, errorView: view)
+        let sut = LoadResourcePresenter(resourceView: view, loadingView: view, errorView: view, mapper: mapper)
         trackMemoryLeaks(view, file: file, line: line)
         trackMemoryLeaks(view, file: file, line: line)
         return (sut, view)
@@ -74,12 +79,12 @@ class LoadResourcePresenterTests: XCTestCase {
         return value
     }
 
-    private class ViewSpy: FeedErrorView, FeedLoadingView, FeedView {
+    private class ViewSpy: ResourceView, FeedErrorView, FeedLoadingView {
 
         enum Message: Hashable {
             case display(errorMessage: String?)
             case display(isLoading: Bool)
-            case display(feed: [FeedImage])
+            case display(resourceViewModel: String)
         }
 
         private(set) var messages = Set<Message>()
@@ -98,8 +103,8 @@ class LoadResourcePresenterTests: XCTestCase {
 
         // MARK: - FeedView
 
-        func display(_ viewModel: FeedViewModel) {
-            messages.insert(.display(feed: viewModel.feed))
+        func display(_ viewModel: String) {
+            messages.insert(.display(resourceViewModel: viewModel))
         }
     }
 }
