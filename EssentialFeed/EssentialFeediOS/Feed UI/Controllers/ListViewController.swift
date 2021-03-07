@@ -16,7 +16,7 @@ public protocol CellController {
     func cancelLoad()
 }
 
-final public class FeedTableViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
+final public class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
     
     @IBOutlet private(set) public var errorView: ErrorView?
     
@@ -84,7 +84,7 @@ final public class FeedTableViewController: UITableViewController, UITableViewDa
         loadingControllers[indexPath] = nil
     }
     
-    public func display(_ cellControllers: [FeedImageCellController]) {
+    public func display(_ cellControllers: [CellController]) {
         loadingControllers = [:]
         tableModel = cellControllers
     }

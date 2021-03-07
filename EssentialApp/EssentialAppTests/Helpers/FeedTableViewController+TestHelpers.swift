@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import EssentialFeediOS
 
-extension FeedTableViewController {
+extension ListViewController {
     
     var errorMessage: String? {
         return errorView?.message
