@@ -11,17 +11,15 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
     private(set) public lazy var errorView = ErrorView()
     
     public var onRefresh: (() -> Void)?
-    private var loadingControllers = [IndexPath: CellController]()
     
-    private var tableModel = [CellController]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = .init(tableView: tableView, cellProvider: { tableView, indexPath, controller in
+        controller.dataSource.tableView(tableView, cellForRowAt: indexPath)
+    })
     
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.dataSource = dataSource
         configureErrorView()
         refresh()
     }
@@ -30,6 +28,12 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         super.viewDidLayoutSubviews()
         
         tableView.sizeTableHeaderToFit()
+    }
+
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            tableView.reloadData()
+        }
     }
 
     private func configureErrorView() {
@@ -58,51 +62,35 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         onRefresh?()
     }
     
-    // MARK: - UITableViewDataSource
-    
-    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableModel.count
-    }
-    
-    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cellController(at: indexPath).dataSource.tableView(tableView, cellForRowAt: indexPath)
-    }
-    
-    private func cellController(at indexPath: IndexPath) -> CellController {
-        let controller = tableModel[indexPath.row]
-        loadingControllers[indexPath] = controller
-        return controller
+    private func cellController(at indexPath: IndexPath) -> CellController? {
+        dataSource.itemIdentifier(for: indexPath)
     }
     
     // MARK: - UITableViewDelegate
     
     public override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        removeLoadingController(at: indexPath)?.delegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
+        cellController(at: indexPath)?.delegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
     
     // MARK: - UITableViewDataSourcePrefetching
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
-            cellController(at: indexPath).dataSourcePrefetching?.tableView(tableView, prefetchRowsAt: [indexPath])
+            cellController(at: indexPath)?.dataSourcePrefetching?.tableView(tableView, prefetchRowsAt: [indexPath])
         }
     }
     
     public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
-            cellController(at: indexPath).dataSourcePrefetching?.tableView?(tableView, cancelPrefetchingForRowsAt: [indexPath])
+            cellController(at: indexPath)?.dataSourcePrefetching?.tableView?(tableView, cancelPrefetchingForRowsAt: [indexPath])
         }
     }
     
-    private func removeLoadingController(at indexPath: IndexPath) -> CellController? {
-        let controller = loadingControllers[indexPath]
-        loadingControllers[indexPath] = nil
-        return controller
-    }
-    
     public func display(_ cellControllers: [CellController]) {
-        loadingControllers = [:]
-        tableModel = cellControllers
+        var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(cellControllers, toSection: 0)
+        dataSource.apply(snapshot)
     }
     
     // MARK: - ResourceLoadingView
