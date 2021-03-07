@@ -3,6 +3,6 @@
 //  Copyright © 2020 Raphael Silva. All rights reserved.
 //
 
-public struct FeedLoadingViewModel {
+public struct ResourceLoadingViewModel {
     public let isLoading: Bool
 }

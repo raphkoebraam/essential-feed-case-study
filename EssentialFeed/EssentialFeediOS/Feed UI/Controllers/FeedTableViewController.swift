@@ -10,7 +10,7 @@ public protocol FeedTableViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
-final public class FeedTableViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
+final public class FeedTableViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, FeedErrorView {
     
     @IBOutlet private(set) public var errorView: ErrorView?
     
@@ -83,9 +83,9 @@ final public class FeedTableViewController: UITableViewController, UITableViewDa
         tableModel = cellControllers
     }
     
-    // MARK: - FeedLoadingView
+    // MARK: - ResourceLoadingView
     
-    public func display(_ viewModel: FeedLoadingViewModel) {
+    public func display(_ viewModel: ResourceLoadingViewModel) {
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
     
