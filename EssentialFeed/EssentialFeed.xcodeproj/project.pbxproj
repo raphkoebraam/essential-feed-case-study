@@ -396,6 +396,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C99DB9BD25F52BF600E48DF2 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				C966339524C35CD00037D397 /* FeedSnapshotTests.swift */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
 		C9B1A6FA24B769B600997611 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,9 +668,9 @@
 		C9F772F02479AA11006272D3 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				C99DB9BD25F52BF600E48DF2 /* Feed UI */,
 				C966339724C36B370037D397 /* Helpers */,
 				C9F772F32479AA11006272D3 /* Info.plist */,
-				C966339524C35CD00037D397 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
