@@ -7,22 +7,23 @@ import Combine
 import EssentialFeed
 import EssentialFeediOS
 
-final class FeedLoaderPresentationAdapter: FeedTableViewControllerDelegate {
-    private let feedLoader: () -> AnyPublisher<[FeedImage], Error>
+final class ResourceLoaderPresentationAdapter<Resource, View: ResourceView> {
+    private let loader: () -> AnyPublisher<Resource, Error>
 
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellable: Cancellable?
 
-    var presenter: LoadResourcePresenter<[FeedImage], FeedViewAdapter>?
+    var presenter: LoadResourcePresenter<Resource, View>?
     
     init(
-        feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>
+        loader: @escaping () -> AnyPublisher<Resource, Error>
     ) {
-        self.feedLoader = feedLoader
+        self.loader = loader
     }
     
-    func didRequestFeedRefresh() {
+    func loadResource() {
         presenter?.didStartLoading()
-        feedLoader()
+
+        cancellable = loader()
             .dispatchOnMainQueue()
             .sink(receiveCompletion: { [weak self] in
                 switch $0 {
@@ -38,6 +39,12 @@ final class FeedLoaderPresentationAdapter: FeedTableViewControllerDelegate {
                 self?.presenter?.didFinishLoading(
                     with: $0
                 )
-            }).store(in: &cancellables)
+            })
+    }
+}
+
+extension ResourceLoaderPresentationAdapter: FeedTableViewControllerDelegate {
+    func didRequestFeedRefresh() {
+        loadResource()
     }
 }
