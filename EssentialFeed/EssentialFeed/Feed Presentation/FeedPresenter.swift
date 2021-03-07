@@ -31,7 +31,7 @@ public final class FeedPresenter {
     }
     
     private var errorMessage: String {
-        return NSLocalizedString("FEED_VIEW_CONNECTION_ERROR",
+        return NSLocalizedString("GENERIC_CONNECTION_ERROR",
                                  tableName: "Feed",
                                  bundle: Bundle(for: FeedPresenter.self),
                                  comment: "Message for the error view")
